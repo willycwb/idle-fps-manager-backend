@@ -3,7 +3,7 @@ import { UsuarioService } from '../../models/usuario/usuario.service';
 import { AuthService } from './auth.service';
 import { getModelToken } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { UsuarioDocument } from 'src/models/usuario/usuario.schema';
+import { UsuarioDocument } from '@/models/usuario/usuario.schema';
 
 describe('AuthService', () => {
   let authService: AuthService;

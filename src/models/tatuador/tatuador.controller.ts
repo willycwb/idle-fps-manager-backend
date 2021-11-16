@@ -1,5 +1,5 @@
 import { AuthenticatedGuard } from '@/authentication/auth/authenticated.guard';
-import { Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 
 @Controller('tatuador')
 export class TatuadorController {
@@ -13,5 +13,11 @@ export class TatuadorController {
   @Get()
   findAll(): string {
     return 'tatuador findAll';
+  }
+
+  @UseGuards(AuthenticatedGuard)
+  @Get(':id')
+  async find(@Param('id') id: string) {
+    return { id };
   }
 }
